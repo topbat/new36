@@ -19,3 +19,6 @@ Thumbs.db
 .vscode/
 *.log
 *.tmp
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts

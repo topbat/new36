@@ -1,0 +1,20 @@
+{
+  "run": 1,
+  "preflightSignals": [],
+  "decision": "No pre-flight signals — proceeding with full Hallmark stack.",
+  "genre": "editorial",
+  "theme": "Almanac",
+  "macrostructure": "Workbench",
+  "archetypes": {
+    "navigation": "N6 Newspaper masthead",
+    "hero": "H2 Split diptych",
+    "feature": "F4 Step sequence",
+    "cta": "C1 Outlined chip",
+    "footer": "Ft1 Mast-headed"
+  },
+  "context": {
+    "audience": ["students", "general readers", "workplace learners"],
+    "useCase": "Explore one stratagem, understand its boundaries, choose in a scenario, and review the decision.",
+    "tone": "Contemporary Eastern editorial reference museum"
+  }
+}

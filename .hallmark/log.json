@@ -1,0 +1,26 @@
+{
+  "outputs": [
+    {
+      "date": "2026-08-27",
+      "artifact": "responsive-web-prototype",
+      "genre": "editorial",
+      "theme": "Almanac",
+      "macrostructure": "Workbench",
+      "navigation": "N6 Newspaper masthead",
+      "hero": "H2 Split diptych",
+      "feature": "F4 Step sequence",
+      "cta": "C1 Outlined chip",
+      "footer": "Ft1 Mast-headed",
+      "critique": {
+        "philosophy": 4,
+        "hierarchy": 4,
+        "execution": 4,
+        "specificity": 5,
+        "restraint": 4,
+        "variety": 5
+      },
+      "slopTest": "pass-69-gates",
+      "mobileWidths": [320, 375, 414, 768]
+    }
+  ]
+}
