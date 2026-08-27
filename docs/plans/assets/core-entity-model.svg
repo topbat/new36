@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <style>
+    text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .title { font-size: 25px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 13px; fill: #6b7280; }
+    .entity { font-size: 14px; font-weight: 700; fill: #111827; }
+    .field { font-size: 11.5px; fill: #64748b; }
+    .group { font-size: 13px; font-weight: 650; fill: #475569; }
+    .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.4; }
+  </style>
+  <defs>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#059669"/></marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker>
+  </defs>
+  <rect width="1200" height="900" fill="#ffffff"/>
+  <text x="48" y="48" class="title">AI 三十六计 · 核心实体关系</text>
+  <text x="48" y="73" class="subtitle">知识、证据、漫画、训练与审核共享版本化数据底座</text>
+
+  <!-- Group containers -->
+  <rect x="40" y="98" width="1120" height="360" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="60" y="124" class="group">知识与媒体内容域</text>
+  <rect x="40" y="486" width="1120" height="190" rx="14" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="60" y="512" class="group">AI 训练与学习域</text>
+  <rect x="40" y="704" width="1120" height="142" rx="14" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="60" y="730" class="group">版本、审核与审计域</text>
+
+  <!-- Relationship paths behind cards -->
+  <path d="M430 184 L510 184" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M690 184 L750 184" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M690 184 L710 184 L710 332 L750 332" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M240 332 L270 332" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M450 332 L480 332 L480 210 L510 210" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M450 350 L510 350" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M690 332 L750 332" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M930 332 L990 332" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M510 228 L480 228 L480 548 L450 548" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M450 574 L510 574" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M690 574 L750 574" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M930 574 L990 574" fill="none" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <path d="M430 782 L510 782" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-dasharray="5 4" marker-end="url(#arrow-purple)"/>
+  <path d="M690 782 L750 782" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-dasharray="5 4" marker-end="url(#arrow-purple)"/>
+
+  <!-- Knowledge row 1 -->
+  <g>
+    <rect x="270" y="140" width="160" height="88" rx="8" class="card"/>
+    <rect x="270" y="140" width="160" height="28" rx="8" fill="#fff7ed"/>
+    <text x="350" y="159" text-anchor="middle" class="entity">Chapter</text>
+    <text x="286" y="188" class="field">PK chapter_id</text>
+    <text x="286" y="208" class="field">name · order · theme</text>
+  </g>
+  <g>
+    <rect x="510" y="132" width="180" height="104" rx="8" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.8"/>
+    <rect x="510" y="132" width="180" height="30" rx="8" fill="#dbeafe"/>
+    <text x="600" y="152" text-anchor="middle" class="entity">Stratagem</text>
+    <text x="526" y="182" class="field">PK stratagem_id</text>
+    <text x="526" y="202" class="field">FK chapter_id · order</text>
+    <text x="526" y="222" class="field">title · status · version</text>
+  </g>
+  <g>
+    <rect x="750" y="140" width="180" height="88" rx="8" class="card"/>
+    <rect x="750" y="140" width="180" height="28" rx="8" fill="#f0fdf4"/>
+    <text x="840" y="159" text-anchor="middle" class="entity">Interpretation</text>
+    <text x="766" y="188" class="field">philosophy · conditions</text>
+    <text x="766" y="208" class="field">limits · ethics · version</text>
+  </g>
+  <g>
+    <rect x="990" y="140" width="150" height="88" rx="8" class="card"/>
+    <rect x="990" y="140" width="150" height="28" rx="8" fill="#fef2f2"/>
+    <text x="1065" y="159" text-anchor="middle" class="entity">Relation</text>
+    <text x="1006" y="188" class="field">source_id · target_id</text>
+    <text x="1006" y="208" class="field">similar / counter / mix</text>
+  </g>
+
+  <!-- Knowledge row 2 -->
+  <g>
+    <rect x="60" y="288" width="180" height="88" rx="8" class="card"/>
+    <rect x="60" y="288" width="180" height="28" rx="8" fill="#f1f5f9"/>
+    <text x="150" y="307" text-anchor="middle" class="entity">Source</text>
+    <text x="76" y="336" class="field">title · author · publisher</text>
+    <text x="76" y="356" class="field">url / isbn · source_type</text>
+  </g>
+  <g>
+    <rect x="270" y="288" width="180" height="96" rx="8" class="card"/>
+    <rect x="270" y="288" width="180" height="28" rx="8" fill="#f0fdf4"/>
+    <text x="360" y="307" text-anchor="middle" class="entity">Evidence</text>
+    <text x="286" y="336" class="field">FK source_id · locator</text>
+    <text x="286" y="356" class="field">claim · confidence</text>
+    <text x="286" y="376" class="field">fact / tradition / analysis</text>
+  </g>
+  <g>
+    <rect x="510" y="288" width="180" height="88" rx="8" class="card"/>
+    <rect x="510" y="288" width="180" height="28" rx="8" fill="#fff7ed"/>
+    <text x="600" y="307" text-anchor="middle" class="entity">Story / Scene</text>
+    <text x="526" y="336" class="field">background · roles · dilemma</text>
+    <text x="526" y="356" class="field">decision · action · outcome</text>
+  </g>
+  <g>
+    <rect x="750" y="288" width="180" height="88" rx="8" class="card"/>
+    <rect x="750" y="288" width="180" height="28" rx="8" fill="#faf5ff"/>
+    <text x="840" y="307" text-anchor="middle" class="entity">Comic</text>
+    <text x="766" y="336" class="field">script · visual_version</text>
+    <text x="766" y="356" class="field">audience · review_status</text>
+  </g>
+  <g>
+    <rect x="990" y="288" width="150" height="88" rx="8" class="card"/>
+    <rect x="990" y="288" width="150" height="28" rx="8" fill="#faf5ff"/>
+    <text x="1065" y="307" text-anchor="middle" class="entity">Panel</text>
+    <text x="1006" y="336" class="field">order · image_uri</text>
+    <text x="1006" y="356" class="field">dialogue · evidence_ids</text>
+  </g>
+
+  <!-- Training domain -->
+  <g>
+    <rect x="270" y="532" width="180" height="84" rx="8" class="card"/>
+    <rect x="270" y="532" width="180" height="28" rx="8" fill="#f0fdfa"/>
+    <text x="360" y="551" text-anchor="middle" class="entity">Scenario</text>
+    <text x="286" y="580" class="field">roles · facts · branches</text>
+    <text x="286" y="600" class="field">audience · safety_level</text>
+  </g>
+  <g>
+    <rect x="510" y="532" width="180" height="84" rx="8" class="card"/>
+    <rect x="510" y="532" width="180" height="28" rx="8" fill="#eff6ff"/>
+    <text x="600" y="551" text-anchor="middle" class="entity">Simulation</text>
+    <text x="526" y="580" class="field">facts · choices · outcomes</text>
+    <text x="526" y="600" class="field">review · evidence_ids</text>
+  </g>
+  <g>
+    <rect x="750" y="532" width="180" height="84" rx="8" class="card"/>
+    <rect x="750" y="532" width="180" height="28" rx="8" fill="#f0fdf4"/>
+    <text x="840" y="551" text-anchor="middle" class="entity">UserProgress</text>
+    <text x="766" y="580" class="field">viewed · completed</text>
+    <text x="766" y="600" class="field">favorite · review_card</text>
+  </g>
+  <g>
+    <rect x="990" y="532" width="150" height="84" rx="8" class="card"/>
+    <rect x="990" y="532" width="150" height="28" rx="8" fill="#f1f5f9"/>
+    <text x="1065" y="551" text-anchor="middle" class="entity">User</text>
+    <text x="1006" y="580" class="field">profile · age_mode</text>
+    <text x="1006" y="600" class="field">privacy_preferences</text>
+  </g>
+
+  <!-- Review domain -->
+  <g>
+    <rect x="270" y="748" width="160" height="68" rx="8" class="card"/>
+    <text x="350" y="775" text-anchor="middle" class="entity">ContentVersion</text>
+    <text x="350" y="798" text-anchor="middle" class="field">snapshot · change_reason</text>
+  </g>
+  <g>
+    <rect x="510" y="748" width="180" height="68" rx="8" fill="#faf5ff" stroke="#c084fc" stroke-width="1.5"/>
+    <text x="600" y="775" text-anchor="middle" class="entity">Review</text>
+    <text x="600" y="798" text-anchor="middle" class="field">reviewer · status · comments</text>
+  </g>
+  <g>
+    <rect x="750" y="748" width="160" height="68" rx="8" class="card"/>
+    <text x="830" y="775" text-anchor="middle" class="entity">AuditLog</text>
+    <text x="830" y="798" text-anchor="middle" class="field">actor · action · timestamp</text>
+  </g>
+
+  <!-- Legend -->
+  <line x1="945" y1="780" x2="985" y2="780" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <text x="995" y="784" class="field">实体关联</text>
+  <line x1="945" y1="808" x2="985" y2="808" stroke="#7c3aed" stroke-width="1.7" stroke-dasharray="5 4" marker-end="url(#arrow-purple)"/>
+  <text x="995" y="812" class="field">审核 / 审计</text>
+</svg>

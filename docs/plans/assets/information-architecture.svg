@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760">
+  <style>
+    text { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .title { font-size: 25px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 13px; fill: #6b7280; }
+    .node-title { font-size: 15px; font-weight: 650; fill: #111827; }
+    .node-sub { font-size: 12px; fill: #6b7280; }
+    .group-label { font-size: 13px; font-weight: 600; fill: #475569; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="48" y="48" class="title">AI 三十六计 · 用户信息架构</text>
+  <text x="48" y="72" class="subtitle">空间化探索负责吸引，结构化展厅负责理解，AI 训练负责知识迁移</text>
+
+  <!-- Flow paths are placed behind nodes -->
+  <path d="M600 155 L600 190" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M600 315 L600 358" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M600 440 L600 478 L142 478 L142 520" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+  <path d="M600 440 L600 478 L371 478 L371 520" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+  <path d="M600 440 L600 520" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+  <path d="M600 440 L600 478 L829 478 L829 520" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+  <path d="M600 440 L600 478 L1058 478 L1058 520" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Home -->
+  <rect x="450" y="92" width="300" height="64" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.8"/>
+  <text x="600" y="119" text-anchor="middle" class="node-title">文化馆首页</text>
+  <text x="600" y="141" text-anchor="middle" class="node-sub">动态长卷 · 今日一计 · 继续学习</text>
+
+  <!-- Six chapter group -->
+  <rect x="40" y="188" width="1120" height="128" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <rect x="60" y="204" width="160" height="82" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.4"/>
+  <text x="140" y="238" text-anchor="middle" class="node-title">胜战计</text>
+  <text x="140" y="261" text-anchor="middle" class="node-sub">优势局势</text>
+  <rect x="244" y="204" width="160" height="82" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.4"/>
+  <text x="324" y="238" text-anchor="middle" class="node-title">敌战计</text>
+  <text x="324" y="261" text-anchor="middle" class="node-sub">势均力敌</text>
+  <rect x="428" y="204" width="160" height="82" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.4"/>
+  <text x="508" y="238" text-anchor="middle" class="node-title">攻战计</text>
+  <text x="508" y="261" text-anchor="middle" class="node-sub">主动攻取</text>
+  <rect x="612" y="204" width="160" height="82" rx="8" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.4"/>
+  <text x="692" y="238" text-anchor="middle" class="node-title">混战计</text>
+  <text x="692" y="261" text-anchor="middle" class="node-sub">局势混乱</text>
+  <rect x="796" y="204" width="160" height="82" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.4"/>
+  <text x="876" y="238" text-anchor="middle" class="node-title">并战计</text>
+  <text x="876" y="261" text-anchor="middle" class="node-sub">合作兼并</text>
+  <rect x="980" y="204" width="160" height="82" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.4"/>
+  <text x="1060" y="238" text-anchor="middle" class="node-title">败战计</text>
+  <text x="1060" y="261" text-anchor="middle" class="node-sub">劣势求生</text>
+
+  <!-- Stratagem hall -->
+  <rect x="390" y="358" width="420" height="82" rx="12" fill="#ecfeff" stroke="#22d3ee" stroke-width="1.8"/>
+  <text x="600" y="389" text-anchor="middle" class="node-title">三十六个单计展厅</text>
+  <text x="600" y="414" text-anchor="middle" class="node-sub">开场 → 漫画 → 哲学 → 场景 → 判断 → 训练 → 沉淀</text>
+
+  <!-- Core modules -->
+  <rect x="52" y="520" width="180" height="86" rx="9" fill="#fff7ed" stroke="#fdba74" stroke-width="1.4"/>
+  <text x="142" y="553" text-anchor="middle" class="node-title">漫画剧场</text>
+  <text x="142" y="578" text-anchor="middle" class="node-sub">分镜 · 旁白 · 知识锚点</text>
+
+  <rect x="281" y="520" width="180" height="86" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.4"/>
+  <text x="371" y="553" text-anchor="middle" class="node-title">知识底座</text>
+  <text x="371" y="578" text-anchor="middle" class="node-sub">原典 · 哲学 · 经典场景</text>
+
+  <rect x="510" y="520" width="180" height="86" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.4"/>
+  <text x="600" y="553" text-anchor="middle" class="node-title">适用与反制</text>
+  <text x="600" y="578" text-anchor="middle" class="node-sub">条件 · 风险 · 识别信号</text>
+
+  <rect x="739" y="520" width="180" height="86" rx="9" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.4"/>
+  <text x="829" y="553" text-anchor="middle" class="node-title">AI 训练场</text>
+  <text x="829" y="578" text-anchor="middle" class="node-sub">识局 · 推演 · 四维复盘</text>
+
+  <rect x="968" y="520" width="180" height="86" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.4"/>
+  <text x="1058" y="553" text-anchor="middle" class="node-title">学习沉淀</text>
+  <text x="1058" y="578" text-anchor="middle" class="node-sub">收藏 · 进度 · 复盘卡</text>
+
+  <!-- Global capabilities -->
+  <rect x="170" y="654" width="860" height="58" rx="29" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4"/>
+  <text x="600" y="679" text-anchor="middle" class="group-label">全局能力</text>
+  <text x="600" y="699" text-anchor="middle" class="node-sub">搜索与图谱　·　AI 导览　·　个人学习馆　·　分享卡　·　展馆扫码续学</text>
+</svg>
