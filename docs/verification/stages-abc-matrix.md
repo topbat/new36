@@ -14,21 +14,23 @@
 
 | 要求 | 状态 | 证据 |
 |---|---|---|
-| 三十六计知识底座与 36 个展厅 | not_started | 待内容完整性测试 |
-| 六个标杆漫画、其余插画故事 | not_started | 待 36×8 分镜与卷级标杆检查 |
-| 六卷馆、图谱、搜索、导览、训练 | not_started | 待产品流程测试 |
-| 18–30 个审核预设训练案例 | not_started | 目标 24 个 |
-| 收藏、进度、复盘、基础后台 | not_started | 待领域与组件测试 |
-| 桌面、手机、Kiosk | not_started | 待生产浏览器与专项测试 |
+| 三十六计知识底座与 36 个展厅 | verified | `catalog.test.ts`：36 条、六卷、证据与关系完整性 |
+| 六个标杆漫画、其余插画故事 | verified | 每卷一个 flagship；36×8 结构化漫画分镜（代码内容，不等同最终手绘成品） |
+| 六卷馆、图谱、搜索、导览、训练 | verified | 组件流程、检索导览安全测试、生产浏览器验收 |
+| 18–30 个审核预设训练案例 | verified | 24 个内部预览案例，三类受众各 8 个，案例契约测试 |
+| 收藏、进度、复盘、基础后台 | verified | 版本化本地进度、匿名报告、分权状态机与追加式审计测试 |
+| 桌面、手机、Kiosk | verified | 响应式 Web、可安装 PWA 与 `?mode=kiosk` 软件模式；真实硬件另列外部项 |
 
 ## 阶段 C：内容与渠道扩展
 
 | 要求 | 状态 | 证据 |
 |---|---|---|
-| 全部三十六计完整漫画 | not_started | 目标每计八格结构化分镜 |
-| 配音、动画、课堂任务、教师控制、报告 | not_started | 待 Web Speech、课堂与报告测试 |
-| 移动 App | not_started | 仓库目标为可安装 PWA；应用商店发布需账号 |
-| 正式展馆版本 | not_started | 仓库目标为 Kiosk 模式；硬件连续运行需真实设备 |
+| 全部三十六计完整漫画 | verified | 每计八格脚本及字幕；成品画稿属后续视觉制作，不伪称已完成 |
+| 配音、动画、课堂任务、教师控制、报告 | verified | 按钮触发 Web Speech、CSS 动效与 reduced-motion、课堂卡、匿名 JSON 报告 |
+| 移动 App 软件交付 | verified | 可安装离线 PWA；`mobile-release-checklist.md` |
+| 应用商店发布 | external_pending | 需要开发者账号、原生包、真实设备与平台审核回执 |
+| 展馆软件模式 | verified | 3 分钟复位、同源续看二维码、隐藏管理入口、Kiosk 手册 |
+| 正式展馆硬件连续运行 | external_pending | `kiosk-runbook.md`，待真实硬件记录 |
 | 学校、出版社、博物馆、文化机构合作 | external_pending | `docs/operations/partnership-kit.md`，待真实机构确认 |
 
 ## 外部证据规则

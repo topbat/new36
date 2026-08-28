@@ -2,9 +2,15 @@
 
 以《三十六计》为文化内容底座，通过经典场景、漫画脚本、哲学拆解和 AI 情境训练，帮助学生、大众读者和职场用户理解局势、成立条件、风险、伦理边界与反制方法。
 
-当前仓库已进入**可运行的 Web 概念验证阶段**：三件先行展品已经串成“看展—读漫画—拆哲学—做选择—看复盘”的完整前端闭环。漫画目前为 CSS 分镜原型，不代表最终插画成品。
+当前仓库已完成阶段 A/B/C 的**仓库内软件交付**：36 计与六卷展馆、24 个训练案例、本地检索导览、关系图谱、学习中心、教师/审核工作台、可安装离线 PWA 和 Kiosk 软件模式均可运行。真实用户测试、应用商店上架、真实展馆硬件连续运行和机构合作仍须外部证据，不在仓库内伪造完成。
 
-![AI 三十六计互动文化馆桌面端原型](./docs/screenshots/web-prototype-desktop.png)
+![AI 三十六计互动文化馆桌面端](./docs/screenshots/stages-abc-desktop.png)
+
+手机端与展馆模式：
+
+![AI 三十六计互动文化馆手机端](./docs/screenshots/stages-abc-mobile.png)
+
+![AI 三十六计互动文化馆展馆模式](./docs/screenshots/stages-abc-kiosk.png)
 
 ## 本地运行
 
@@ -21,6 +27,8 @@ npm run check
 npm run build
 ```
 
+生产构建后可用 `/?mode=kiosk` 进入展馆模式；普通页面可由浏览器安装为 PWA。
+
 ## 当前内容
 
 - [完整产品设计](./docs/plans/2026-08-27-ai-thirty-six-stratagems-design.md)
@@ -30,6 +38,10 @@ npm run build
 - [第三十六计·走为上](./content/prototypes/36-retreat-is-best.md)
 - [响应式 Web 原型实现计划](./docs/plans/2026-08-27-responsive-web-prototype-implementation.md)
 - [移动端真实运行截图](./docs/screenshots/web-prototype-mobile.png)
+- [阶段 A/B/C 验收矩阵](./docs/verification/stages-abc-matrix.md)
+- [展馆 Kiosk 运行手册](./docs/operations/kiosk-runbook.md)
+- [移动端发布检查表](./docs/operations/mobile-release-checklist.md)
+- [未来服务端 OpenAPI 契约](./docs/api/openapi.yaml)
 
 ## 产品结构
 
@@ -50,7 +62,7 @@ npm run build
   → 四维复盘反馈
 ```
 
-当前版本没有后端、账户、数据库或模型调用。情境反馈来自仓库内可审阅的静态分支，页面明确显示“未连接生成式 AI”。未来接入模型时，仍需保留来源标签、输入安全检查、输出审核与不可协助边界。
+当前版本没有后端、账户、数据库或模型调用。情境反馈来自仓库内可审阅的静态分支；导览采用本地可解释检索，页面明确显示未连接生成式 AI。未来服务端和模型接入必须遵循显式 Provider 与 OpenAPI 契约，未配置时明确失败，不静默改用其他模型。
 
 ## 内容原则
 
@@ -75,8 +87,11 @@ npm run build
 - [x] 内容数据模型与审核流程
 - [x] 三个概念验证内容样稿
 - [x] 高保真响应式 Web 原型（三计）
-- [ ] 标杆漫画视觉生产
-- [ ] 可运行 MVP
+- [x] 36 计知识底座、六卷展馆与 24 个训练案例
+- [x] 本地进度、教师工具、内容审核领域契约
+- [x] 可安装离线 PWA 与 Kiosk 软件模式
+- [ ] 最终手绘/动画成品资产生产
+- [ ] 外部真实用户、应用商店、硬件展馆和机构合作验收
 
 ## 说明
 

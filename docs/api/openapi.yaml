@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: AI 三十六计服务契约
+  version: 1.0.0-draft
+  description: >-
+    当前 Web 版本使用本地仓储；本文件定义未来服务端替换边界。所有生成式能力必须显式配置 provider，未配置时返回 503，不允许静默回退。
+servers:
+  - url: https://api.example.invalid/v1
+    description: 占位地址，不是已部署服务
+paths:
+  /stratagems:
+    get:
+      summary: 获取可见计策目录
+      responses:
+        "200":
+          description: 计策摘要列表
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/StratagemSummary" }
+  /stratagems/{id}:
+    get:
+      summary: 获取计策、证据和内容状态
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string, pattern: "^[0-9]{2}$" }
+      responses:
+        "200": { description: 完整展品 }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /guide:
+    post:
+      summary: 运行导览；本地检索不调用本端点
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [query]
+              properties:
+                query: { type: string, minLength: 1, maxLength: 1000 }
+      responses:
+        "200": { description: 经过安全检查且结构化的导览结果 }
+        "400": { description: 输入结构无效 }
+        "422": { description: 请求触发安全边界，未继续推演 }
+        "503": { description: AI provider 未配置或不可用；客户端应显示本地检索模式 }
+  /training-cases:
+    get:
+      summary: 获取已审核的预设训练案例
+      responses:
+        "200": { description: 训练案例列表 }
+  /progress:
+    put:
+      summary: 同步版本化学习进度（可选能力）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Progress" }
+      responses:
+        "204": { description: 已保存 }
+        "409": { description: 版本冲突 }
+  /content/{id}/actions/{action}:
+    post:
+      summary: 执行提交、复核、发布或回滚动作
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+        - in: path
+          name: action
+          required: true
+          schema: { type: string, enum: [submit, request_changes, approve, publish, rollback] }
+      responses:
+        "200": { description: 返回新状态及追加式审计事件 }
+        "403": { description: 当前角色无权执行动作 }
+        "409": { description: 当前内容状态不允许此动作 }
+components:
+  schemas:
+    StratagemSummary:
+      type: object
+      required: [id, title, volumeId, status, evidenceIds]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        volumeId: { type: string }
+        status: { type: string, enum: [content_review, editorial_draft] }
+        evidenceIds:
+          type: array
+          items: { type: string }
+    Progress:
+      type: object
+      additionalProperties: false
+      required: [version, favorites, read, reviews]
+      properties:
+        version: { type: integer, const: 1 }
+        favorites: { type: array, items: { type: string } }
+        read: { type: array, items: { type: string } }
+        reviews:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [stratagemId, optionId, recordedAt]
+            properties:
+              stratagemId: { type: string }
+              optionId: { type: string }
+              recordedAt: { type: string, format: date-time }
+  responses:
+    NotFound:
+      description: 资源不存在
