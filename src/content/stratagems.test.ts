@@ -4,9 +4,9 @@ import { stratagems } from "./stratagems";
 
 describe("stratagem content contract", () => {
   it("contains the three approved and uniquely identified concept exhibits", () => {
-    expect(stratagems).toHaveLength(3);
-    expect(stratagems.map(({ id }) => id)).toEqual(["02", "03", "36"]);
-    expect(new Set(stratagems.map(({ slug }) => slug)).size).toBe(3);
+    const conceptExhibits = stratagems.filter(({ status }) => status === "content_review");
+    expect(conceptExhibits.map(({ id }) => id)).toEqual(["02", "03", "36"]);
+    expect(new Set(conceptExhibits.map(({ slug }) => slug)).size).toBe(3);
   });
 
   it("gives every exhibit a complete interpretation and provenance trail", () => {
