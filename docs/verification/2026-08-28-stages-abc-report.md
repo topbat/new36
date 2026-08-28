@@ -6,7 +6,7 @@
 |---|---|
 | `npm test` | 9 个测试文件，29 项通过 |
 | `npm run check` | TypeScript 项目检查通过 |
-| `npm run build` | Vite 生产构建通过；生成 manifest 与 Service Worker；预缓存 7 项 |
+| `npm run build` | Vinext / Sites 生产构建通过；生成 Cloudflare Worker，并包含 manifest 与 Service Worker 应用壳缓存 |
 | 内容完整性 | 36 个唯一连续 ID、六卷、每计五层解释、八格分镜、三类迁移、证据和有效关系 |
 | 训练完整性 | 24 案例；学生/大众/职场各 8；每例 3 选项且唯一推荐；停止条件与无个人数据 |
 | 安全导览 | 100 个确定性夹具；模糊输入不补造事实；伤害、作弊、隐私等请求停止推演 |

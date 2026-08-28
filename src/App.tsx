@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useMemo, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 
@@ -393,6 +395,12 @@ export default function App() {
       window.localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(progress));
     }
   }, [progress]);
+
+  useEffect(() => {
+    if (import.meta.env.PROD && "serviceWorker" in navigator) {
+      void navigator.serviceWorker.register("/sw.js");
+    }
+  }, []);
 
   useEffect(() => {
     if (!kioskMode) return;

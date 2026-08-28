@@ -1,33 +1,29 @@
-import { defineConfig } from "vitest/config";
-import react from "@vitejs/plugin-react";
-import { VitePWA } from "vite-plugin-pwa";
+import { sites } from "@openai/sites-vite-plugin";
+import vinext from "vinext";
+import { defineConfig } from "vite";
 
-export default defineConfig({
-  plugins: [
-    react(),
-    VitePWA({
-      registerType: "autoUpdate",
-      includeAssets: ["icon.svg", "maskable-icon.svg"],
-      manifest: {
-        name: "三十六计互动文化馆",
-        short_name: "三十六计",
-        description: "面向学生、大众读者与职场学习者的本地优先互动文化馆",
-        lang: "zh-CN",
-        start_url: "/",
-        display: "standalone",
-        background_color: "#f3eee3",
-        theme_color: "#2c211b",
-        icons: [
-          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-          { src: "/maskable-icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
-        ],
-      },
-      workbox: { navigateFallback: "/index.html", cleanupOutdatedCaches: true },
-    }),
-  ],
-  test: {
-    environment: "jsdom",
-    setupFiles: "./src/test/setup.ts",
-    css: true,
-  },
+import hostingConfig from "./.openai/hosting.json" with { type: "json" };
+
+const SITE_CREATOR_PLACEHOLDER_DATABASE_ID = "00000000-0000-4000-8000-000000000000";
+const { d1, r2 } = hostingConfig;
+
+const localBindingConfig = {
+  main: "vinext/server/fetch-handler",
+  compatibility_flags: ["nodejs_compat"],
+  d1_databases: d1 ? [{ binding: d1, database_name: "site-creator-d1", database_id: SITE_CREATOR_PLACEHOLDER_DATABASE_ID }] : [],
+  r2_buckets: r2 ? [{ binding: r2, bucket_name: "site-creator-r2" }] : [],
+};
+
+export default defineConfig(async () => {
+  process.env.WRANGLER_WRITE_LOGS ??= "false";
+  process.env.WRANGLER_LOG_PATH ??= ".wrangler/logs";
+  process.env.MINIFLARE_REGISTRY_PATH ??= ".wrangler/registry";
+  const { cloudflare } = await import("@cloudflare/vite-plugin");
+  return {
+    plugins: [
+      vinext(),
+      sites(),
+      cloudflare({ viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] }, config: localBindingConfig }),
+    ],
+  };
 });
